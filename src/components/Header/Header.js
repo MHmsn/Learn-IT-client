@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AllContext } from "../../contexts/Context/ContextProvider";
+import logo from '../../logo.png'
 
 
 const Header = ({light, setLight}) => {
@@ -38,15 +39,19 @@ const Header = ({light, setLight}) => {
               </li>
             </ul>
           </div>
-          <div className="btn btn-ghost normal-case text-xl">daisyUI</div>
+          <div className="btn btn-ghost normal-case text-xl">
+          <img className="h-full" src={logo} alt="logo"/> <span className=" mx-4">Learn IT</span></div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
             <li>
-              <div>Item 1</div>
+              <div>Courses</div>
             </li>
             <li>
-              <div>Item 3</div>
+              <div>FAQ</div>
+            </li>
+            <li>
+              <div>Blog</div>
             </li>
           </ul>
         </div>
