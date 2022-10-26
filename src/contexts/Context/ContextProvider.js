@@ -7,7 +7,7 @@ export const AllContext = createContext();
 const auth = getAuth(app);
 
 const ContextProvider = ({children}) => {
-    const [dark, setDark] = useState(true);
+    const [dark, setDark] = useState(JSON.parse(localStorage.getItem("isDark")));
     const [user, setUser] = useState(null); 
 
 

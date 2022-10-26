@@ -5,6 +5,11 @@ import logo from "../../logo.png";
 
 const Header = ({ light, setLight }) => {
   const { dark, setDark } = useContext(AllContext);
+  const handleDarkMode = () => {
+    localStorage.setItem("isDark", !dark);
+    setDark(!dark);
+    
+  }
   return (
     <div>
       <div className="navbar bg-secondary-focus text-primary-focus font-bold">
@@ -72,9 +77,9 @@ const Header = ({ light, setLight }) => {
           </ul>
         </div>
         <div className="navbar-end">
-        <button className="btn btn-secondary mr-2"> Log in </button>
+        <Link to='/login'><button className="btn btn-secondary mr-2"> Log in </button></Link>
           <label className="swap swap-rotate">
-            <input type="checkbox" onClick={() => setDark(!dark)} />
+            <input type="checkbox" onClick={handleDarkMode} />
             {/* sun icon */}
             <svg
               className="swap-on fill-current w-10 h-10"

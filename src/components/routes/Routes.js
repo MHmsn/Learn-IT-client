@@ -3,6 +3,7 @@ import Blog from "../Blog/Blog";
 import Course from "../Course/Course";
 import Courses from "../Courses/Courses";
 import FAQ from "../FAQ/FAQ";
+import Login from "../Login/Login";
 import Main from "../Main/Main";
 
 export const routes = createBrowserRouter([
@@ -41,6 +42,11 @@ export const routes = createBrowserRouter([
         path: "/blog",
         element: <Blog></Blog>,
       },
+      {
+        path: "/login",
+        element: <Login></Login>
+      }
+
     ],
   },
 ]);
