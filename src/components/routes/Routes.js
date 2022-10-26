@@ -19,6 +19,7 @@ export const routes = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
+        errorElement: <ErrorPage></ErrorPage>
       },
       {
         path: "/courses",
