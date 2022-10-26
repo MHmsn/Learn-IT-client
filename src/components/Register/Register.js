@@ -25,7 +25,7 @@ const Register = () => {
       <h2 className="text-2xl my-4">Register</h2>
       <form onSubmit={registerHandle}>
         <div className="my-4">
-          <label htmlFor="inputName">Name</label>
+          <label htmlFor="inputName">Full Name</label>
           <br/>
           <input
             name="name"
