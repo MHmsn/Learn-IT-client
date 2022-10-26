@@ -1,12 +1,16 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AllContext } from '../../contexts/Context/ContextProvider';
+import { FaGoogle } from 'react-icons/fa';
+import { GoogleAuthProvider } from 'firebase/auth';
+
 
 const Login = () => {
-    const {signIn} = useContext(AllContext)
+    const {signIn, providerLogin} = useContext(AllContext)
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+    const googleProvider = new GoogleAuthProvider();
 
     const loginHandle = event => {
         event.preventDefault();
@@ -18,6 +22,19 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             form.reset();
+            navigate(from, {replace: true});
+            
+        })
+        .catch(e => console.error(e));
+        
+    }
+    const googleLogInHandle = event => {
+        event.preventDefault();
+        
+        providerLogin(googleProvider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
             navigate(from, {replace: true});
             
         })
@@ -44,7 +61,7 @@ const Login = () => {
                 </div>
                 <div className='text-center flex flex-col items-center'>
                 <hr className='bg-black h-1 mt-4 w-5/6'/>
-                <button className='btn btn-primary w-4/6 mt-4'>Log in with Google</button>
+                <button className='btn btn-primary w-4/6 mt-4' onClick={googleLogInHandle}>Log in with Google <FaGoogle className=' ml-2'/></button>
                 </div>
             </form>
         </div>
