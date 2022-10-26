@@ -72,6 +72,7 @@ const Header = ({ light, setLight }) => {
           </ul>
         </div>
         <div className="navbar-end">
+        <button className="btn btn-secondary mr-2"> Log in </button>
           <label className="swap swap-rotate">
             <input type="checkbox" onClick={() => setDark(!dark)} />
             {/* sun icon */}
