@@ -83,7 +83,7 @@ const Header = ({ light, setLight }) => {
           </ul>
         </div>
         <div className="navbar-end">
-        {user?.uid?<><Link><img src={user.photoURL} className=" rounded-full w-9 text-sm" alt={user.displayName} title={user.displayName}/></Link> <button className="btn btn-primary mx-2" onClick={logOutHandle}>Log Out</button></>:<Link to='/login'><button className="btn btn-secondary mr-2"> Log in </button></Link>}
+        {user?.uid?<><Link><img src={user.photoURL} className=" rounded-full w-9 text-sm" alt={user.displayName} title={user.displayName}/></Link> <button className="btn btn-primary mx-2" onClick={logOutHandle}>Log Out</button></>:<Link to='/login'><button className="btn btn-primary mr-2"> Log in </button></Link>}
           <label className="swap swap-rotate">
             <input type="checkbox" onClick={handleDarkMode} />
             {/* sun icon */}

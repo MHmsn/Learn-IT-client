@@ -1,3 +1,31 @@
+# Website Name
+
+Learn-IT
+
+## Live Site
+https://learn-it-33678.web.app/
+
+# Features and Functionalities
+
+### `3 different login systems, Email-Password, google, and github`
+### `Private protected routes`
+### `Registering and account creation systems`
+### `Dark Mode - Light Mode Toggle`
+### `Responsive for Mobile and Desktop`
+
+
+# Frameworks and Libraries
+
+React.JS , Tailwind(DaisyUI), React-icons, Firebase, React hot toasts etc 
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
