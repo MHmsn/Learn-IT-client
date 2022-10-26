@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AllContext } from '../../contexts/Context/ContextProvider';
-import { FaGoogle } from 'react-icons/fa';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 
 const Login = () => {
@@ -11,6 +11,7 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const loginHandle = event => {
         event.preventDefault();
@@ -41,6 +42,19 @@ const Login = () => {
         .catch(e => console.error(e));
         
     }
+    const githubLogInHandle = event => {
+        event.preventDefault();
+        
+        providerLogin(githubProvider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            navigate(from, {replace: true});
+            
+        })
+        .catch(e => console.error(e));
+        
+    }
     return (
         <div className=' text-left mx-auto bg-secondary w-4/5 md:w-1/2 p-8 md:p-16 rounded-xl'>
             <h2 className='text-2xl my-4'>Please login</h2>
@@ -62,6 +76,7 @@ const Login = () => {
                 <div className='text-center flex flex-col items-center'>
                 <hr className='bg-black h-1 mt-4 w-5/6'/>
                 <button className='btn btn-primary w-4/6 mt-4' onClick={googleLogInHandle}>Log in with Google <FaGoogle className=' ml-2'/></button>
+                <button className='btn btn-primary w-4/6 mt-4' onClick={githubLogInHandle}>Log in with GitHub <FaGithub className=' ml-2'/></button>
                 </div>
             </form>
         </div>

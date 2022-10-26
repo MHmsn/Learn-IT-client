@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AllContext } from "../../contexts/Context/ContextProvider";
 
 const Register = () => {
@@ -72,6 +72,9 @@ const Register = () => {
           <button className="btn btn-primary" type="submit">
             Register
           </button>
+        </div>
+        <div className="mt-4">
+            Already have an account? <Link to='/login' className=" underline">Log in</Link>
         </div>
       </form>
     </div>
