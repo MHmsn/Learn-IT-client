@@ -4,11 +4,17 @@ import { AllContext } from "../../contexts/Context/ContextProvider";
 import logo from "../../logo.png";
 
 const Header = ({ light, setLight }) => {
-  const { dark, setDark } = useContext(AllContext);
+  const { dark, setDark, user, logOut } = useContext(AllContext);
   const handleDarkMode = () => {
     localStorage.setItem("isDark", !dark);
     setDark(!dark);
     
+  }
+  console.log(user);
+  const logOutHandle = event => {
+      logOut()
+      .then(() => {})
+      .catch(e => console.error(e));
   }
   return (
     <div>
@@ -77,7 +83,7 @@ const Header = ({ light, setLight }) => {
           </ul>
         </div>
         <div className="navbar-end">
-        <Link to='/login'><button className="btn btn-secondary mr-2"> Log in </button></Link>
+        {user?.uid?<><Link><img src={user.photoURL} className=" rounded-full w-9" alt={user.displayName} title={user.displayName}/></Link> <button className="btn btn-primary mx-2" onClick={logOutHandle}>Log Out</button></>:<Link to='/login'><button className="btn btn-secondary mr-2"> Log in </button></Link>}
           <label className="swap swap-rotate">
             <input type="checkbox" onClick={handleDarkMode} />
             {/* sun icon */}

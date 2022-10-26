@@ -5,6 +5,8 @@ import Courses from "../Courses/Courses";
 import FAQ from "../FAQ/FAQ";
 import Login from "../Login/Login";
 import Main from "../Main/Main";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Register from "../Register/Register";
 
 export const routes = createBrowserRouter([
   {
@@ -13,7 +15,7 @@ export const routes = createBrowserRouter([
     children: [
       {
         path: "/courses",
-        element: <Courses></Courses>,
+        element: <PrivateRoute><Courses></Courses></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/categories'),
         children: [
           {
@@ -45,6 +47,10 @@ export const routes = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
       }
 
     ],
