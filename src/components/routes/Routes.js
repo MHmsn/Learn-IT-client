@@ -1,9 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Blog/Blog";
 import Course from "../Course/Course";
+import CourseDetail from "../CourseDetail/CourseDetail";
 import Courses from "../Courses/Courses";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import FAQ from "../FAQ/FAQ";
+import Home from "../Home/Home";
 import Login from "../Login/Login";
 import Main from "../Main/Main";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -14,6 +16,10 @@ export const routes = createBrowserRouter([
     path: "/",
     element: <Main></Main>,
     children: [
+      {
+        path: '/',
+        element: <Home></Home>,
+      },
       {
         path: "/courses",
         element: <PrivateRoute><Courses></Courses></PrivateRoute>,
@@ -28,11 +34,20 @@ export const routes = createBrowserRouter([
             errorElement: <ErrorPage></ErrorPage>
           },
           {
+            path: '/courses/course-:id',
+            element: <CourseDetail></CourseDetail>,
+            loader: async ({params}) => {
+              return fetch(`http://localhost:5000/categories/course-${params.id}`)
+            },
+            errorElement: <ErrorPage></ErrorPage>
+          },
+          {
             path: '/courses/',
             element: <Course></Course>,
             loader: async ({params}) => {
               return fetch(`http://localhost:5000/categories/07`)
-            }
+            },
+            errorElement: <ErrorPage></ErrorPage>
           }
         ],
         errorElement: <ErrorPage></ErrorPage>
