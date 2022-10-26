@@ -8,11 +8,15 @@ const CourseDetail = () => {
   const course = useLoaderData();
   const { name, img, details, videos, id } = course;
   const ref = createRef();
+  const options = {
+    orientation: "landscape"
+  };
+
   return (
     <div className="bg-secondary p-10 rounded-lg" ref={ref}>
       <h1 className="text-5xl"> {name}</h1>
       <div className=" text-end">
-        <ReactToPdf targetRef={ref} filename={`${name}.pdf`}>
+        <ReactToPdf targetRef={ref} filename={`${name}.pdf`} options={options} x={.5} y={.5} scale={0.8}>
           {({ toPdf }) => (
             <button className="btn btn-primary" onClick={toPdf}>
               Download

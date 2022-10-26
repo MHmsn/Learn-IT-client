@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom/dist";
 import { AllContext } from "../../contexts/Context/ContextProvider";
 import logo from "../../logo.png";
 
 const Header = ({ light, setLight }) => {
   const { dark, setDark, user, logOut } = useContext(AllContext);
+  const navigate = useNavigate();
   const handleDarkMode = () => {
     localStorage.setItem("isDark", !dark);
     setDark(!dark);
@@ -13,7 +15,9 @@ const Header = ({ light, setLight }) => {
   console.log(user);
   const logOutHandle = event => {
       logOut()
-      .then(() => {})
+      .then(() => {
+        navigate('/');
+      })
       .catch(e => console.error(e));
   }
   return (
