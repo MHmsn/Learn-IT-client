@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Blog/Blog";
+import Checkout from "../Checkout/Checkout";
 import Course from "../Course/Course";
 import CourseDetail from "../CourseDetail/CourseDetail";
 import Courses from "../Courses/Courses";
@@ -23,7 +24,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/courses",
-        element: <PrivateRoute><Courses></Courses></PrivateRoute>,
+        element: <Courses></Courses>,
         loader: () => fetch('http://localhost:5000/categories'),
         children: [
           {
@@ -31,6 +32,22 @@ export const routes = createBrowserRouter([
             element: <Course></Course>,
             loader: async ({params}) => {
               return fetch(`http://localhost:5000/categories/${params.courseId}`)
+            },
+            errorElement: <ErrorPage></ErrorPage>
+          },
+          {
+            path: '/courses/course-:id',
+            element: <CourseDetail></CourseDetail>,
+            loader: async ({params}) => {
+              return fetch(`http://localhost:5000/categories/course-${params.id}`)
+            },
+            errorElement: <ErrorPage></ErrorPage>
+          },
+          {
+            path: '/courses/course-:id/checkout',
+            element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
+            loader: async ({params}) => {
+              return fetch(`http://localhost:5000/categories/course-${params.id}`)
             },
             errorElement: <ErrorPage></ErrorPage>
           },
