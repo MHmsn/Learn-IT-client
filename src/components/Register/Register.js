@@ -24,7 +24,7 @@ const Register = () => {
         });
     }
   return (
-    <div className=" text-left mx-auto bg-secondary w-2/5 p-20 rounded-xl">
+    <div className=" text-left mx-auto bg-secondary w-4/5 md:w-1/2 p-8 md:p-16 rounded-xl">
       <h2 className="text-2xl my-4">Register</h2>
       <form onSubmit={registerHandle}>
         <div className="my-4">

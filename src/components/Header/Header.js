@@ -62,10 +62,12 @@ const Header = ({ light, setLight }) => {
               </li>
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost normal-case text-xl">
+          
+          <Link to="/" className="btn btn-ghost normal-case text-xl flex px-0 w-fit">
             <img className="h-full" src={logo} alt="logo" />{" "}
-            <span className="font-extrabold mx-4">Learn IT</span>
+            <span className="font-extrabold mx-3 text-sm md:text-xl">Learn IT</span>
           </Link>
+          
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
