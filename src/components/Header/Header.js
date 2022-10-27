@@ -64,7 +64,7 @@ const Header = ({ light, setLight }) => {
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl">
             <img className="h-full" src={logo} alt="logo" />{" "}
-            <span className=" mx-4">Learn IT</span>
+            <span className="font-extrabold mx-4">Learn IT</span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -92,7 +92,7 @@ const Header = ({ light, setLight }) => {
             <input type="checkbox" onClick={handleDarkMode} />
             {/* sun icon */}
             <svg
-              className="swap-on fill-current w-10 h-10"
+              className="swap-off fill-current w-10 h-10"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -100,7 +100,7 @@ const Header = ({ light, setLight }) => {
             </svg>
             {/* moon icon      */}
             <svg
-              className="swap-off fill-current w-10 h-10"
+              className="swap-on fill-current w-10 h-10"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >

@@ -4,7 +4,7 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className="h-12 mt-10">
-      <footer className="footer p-10 bg-secondary-focus text-primary">
+      <footer className="footer p-10 bg-secondary-focus text-primary-focus">
         <div>
           <svg
             width="50"
@@ -21,11 +21,13 @@ const Footer = () => {
             Made by
             <br />
             Md. Moinul Hassan
+            <br />
+            moinulh.msn@gmail.com
           </p>
         </div>
         <div className="text-xl">
-          <span className="footer-title">Social</span>
-          <div className="grid grid-flow-col gap-4">
+          <span className="font-bold mb-6">Social</span>
+          <div className="grid grid-flow-col gap-8 text-5xl">
             <a href="https://www.facebook.com/mssn.l">
               <FaFacebook/>
             </a>
