@@ -12,6 +12,8 @@ import Main from "../Main/Main";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Register from "../Register/Register";
 
+
+// all the routes are here
 export const routes = createBrowserRouter([
   {
     path: "/",
@@ -25,13 +27,13 @@ export const routes = createBrowserRouter([
       {
         path: "/courses",
         element: <Courses></Courses>,
-        loader: () => fetch('http://localhost:5000/categories'),
+        loader: () => fetch('https://cs-edu-server.vercel.app/categories'),
         children: [
           {
             path: '/courses/:courseId',
             element: <Course></Course>,
             loader: async ({params}) => {
-              return fetch(`http://localhost:5000/categories/${params.courseId}`)
+              return fetch(`https://cs-edu-server.vercel.app/categories/${params.courseId}`)
             },
             errorElement: <ErrorPage></ErrorPage>
           },
@@ -39,7 +41,7 @@ export const routes = createBrowserRouter([
             path: '/courses/course-:id',
             element: <CourseDetail></CourseDetail>,
             loader: async ({params}) => {
-              return fetch(`http://localhost:5000/categories/course-${params.id}`)
+              return fetch(`https://cs-edu-server.vercel.app/categories/course-${params.id}`)
             },
             errorElement: <ErrorPage></ErrorPage>
           },
@@ -47,7 +49,7 @@ export const routes = createBrowserRouter([
             path: '/courses/course-:id/checkout',
             element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
             loader: async ({params}) => {
-              return fetch(`http://localhost:5000/categories/course-${params.id}`)
+              return fetch(`https://cs-edu-server.vercel.app/categories/course-${params.id}`)
             },
             errorElement: <ErrorPage></ErrorPage>
           },
@@ -55,7 +57,7 @@ export const routes = createBrowserRouter([
             path: '/courses/course-:id',
             element: <CourseDetail></CourseDetail>,
             loader: async ({params}) => {
-              return fetch(`http://localhost:5000/categories/course-${params.id}`)
+              return fetch(`https://cs-edu-server.vercel.app/categories/course-${params.id}`)
             },
             errorElement: <ErrorPage></ErrorPage>
           },
@@ -63,7 +65,7 @@ export const routes = createBrowserRouter([
             path: '/courses/',
             element: <Course></Course>,
             loader: async ({params}) => {
-              return fetch(`http://localhost:5000/categories/07`)
+              return fetch(`https://cs-edu-server.vercel.app/categories/07`)
             },
             errorElement: <ErrorPage></ErrorPage>
           }

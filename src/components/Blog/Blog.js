@@ -10,7 +10,7 @@ const Blog = () => {
                     <h2>What is cors?</h2>
                 </div>
                 <div className="collapse-content bg-accent"> 
-                    <p className='pt-4 font-bold'>React router allows us to create a single page web-app with multiple routes with different content and data. With normal HTML, CSS and JavaScript, we can create multi page websites, but everytime we change pages, the new page is loaded from scratch. Here React router comes to the rescue. With react router, we can decide which part of the page stays static and which part's content is gonna change and load new data. It also allows us to load data and create routes dynamically. React router makes navigation and loading data easier in a dynamic way. </p>
+                    <p className='pt-4 font-bold'>cors is cross-origin-resource-sharing. Usually when we deploy API with data from database, we cannot get the data from another device or platform because of security measures for that data. cors allows us to relax this security and get the data through fetch API. As a result, any origins can get access to that data. we can use it by npm install cors in the command line and then using require function and use function in the index.js file. </p>
                 </div>
             </div>
             <div className="collapse w-3/4 rounded-md mx-auto my-10">
@@ -19,7 +19,7 @@ const Blog = () => {
                     <h2>Why are you using firebase? What other options do you have to implement authentication?</h2>
                 </div>
                 <div className="collapse-content bg-accent"> 
-                    <p className='pt-4 font-bold'>Context API in react is a way for data to be passed around like a global variable. Normally in React, we can pass data from parent prop to child prop. However, if there are a lot of children and grandchildren components, we have to pass the prop a lot of times and the code becomes repeating. This is also called prop drilling. In order to avoid this prop drilling, we can use this context API to pass data to the exact children component we want to. At first we have to use createContext to create a context. Then we have to use context provider. After that, in the children component we want our data to be in, we can use the useContext hook to get the data from the context. </p>
+                    <p className='pt-4 font-bold'>firebase is a tool which we can use for implementing different types of authentication systems in a website. We can also use it for deploying our web-app. It also has various other features to add to our web-app. It helps us to manage our project well. It also has a cloud database. We can use Parse as alternative to Firebase. </p>
                 </div>
             </div>
             <div className="collapse w-3/4 rounded-md mx-auto my-10">
@@ -28,7 +28,7 @@ const Blog = () => {
                     <h2>How does the private route work?</h2>
                 </div>
                 <div className="collapse-content bg-accent"> 
-                    <p className='pt-4 font-bold'>useRef is a similar hook like useState. But useRef does not cause any rerender. For example, if we want to keep track of how many times the page is rerendered using useState, we will face an infinite loop as useState itself makes the page rerender. We can use useRef hook to avoid this incident. useRef only returns an object called current. Which later can be accessed by using (objectname).current .</p>
+                    <p className='pt-4 font-bold'>Private route is basically just a route which is designed to check the authentication of user before displaying the content of a route. If we have any route inside the privateRoute as children we can check inside the privateRoute if there is any user logged in. if there is a user the child component will be shown, otherwise will be navigated to the login page.</p>
                 </div>
             </div>
             <div className="collapse w-3/4 rounded-md mx-auto my-10">
@@ -37,7 +37,7 @@ const Blog = () => {
                     <h2>What is Node? How does Node work?</h2>
                 </div>
                 <div className="collapse-content bg-accent"> 
-                    <p className='pt-4 font-bold'>useRef is a similar hook like useState. But useRef does not cause any rerender. For example, if we want to keep track of how many times the page is rerendered using useState, we will face an infinite loop as useState itself makes the page rerender. We can use useRef hook to avoid this incident. useRef only returns an object called current. Which later can be accessed by using (objectname).current .</p>
+                    <p className='pt-4 font-bold'>Node is a JavaScript Runtime software that allows us to directly run JavaScript code in the terminal, without the need of a browser. Node.JS is used to build server side fully functional applications. It also has access to files and system which is required to build those applications. This is written with JavaScript but it works as a server-side language. It uses chrome v8 engine to convert javascript code into machine code.</p>
                 </div>
             </div>
             </div>

@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AllContext } from "../../contexts/Context/ContextProvider";
 
 const Register = () => {
     const {createUser, updateUserProfile} = useContext(AllContext);
     const navigate = useNavigate();
+    const [error, setError] = useState(null);
 
     const registerHandle = event => {
         event.preventDefault();
@@ -18,7 +19,9 @@ const Register = () => {
           updateUserProfile({displayName: name, photoURL: photoURL})
           navigate('/');
         })
-        .catch(e => console.error(e));
+        .catch(e => {
+          setError(e.message);         
+        });
     }
   return (
     <div className=" text-left mx-auto bg-secondary w-2/5 p-20 rounded-xl">
@@ -72,6 +75,10 @@ const Register = () => {
           <button className="btn btn-primary" type="submit">
             Register
           </button>
+        </div>
+
+        <div className="my-4 text-red-600">
+            {error}
         </div>
         <div className="mt-4">
             Already have an account? <Link to='/login' className=" underline">Log in</Link>
