@@ -1,5 +1,7 @@
 import React from 'react';
 
+//blog page
+
 const Blog = () => {
     return (
         <div>
